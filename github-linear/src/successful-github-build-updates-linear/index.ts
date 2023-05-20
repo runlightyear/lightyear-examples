@@ -9,7 +9,7 @@ import { updateLastSuccessfulCommitId } from "./updateLastSuccessfulCommitId";
 import { SKIPPED } from "../../../../lightyear/packages/@runlightyear/lightyear";
 
 const OWNER = "<owner>";
-const REPO = "<repo";
+const REPO = "<repo>";
 const IDENTIFIER_REGEX = /ENG-[0-9]+/g; // <-- must be a global regex (ends with /g)
 const STATE_NAME = "Done";
 
