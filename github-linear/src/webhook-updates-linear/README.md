@@ -19,7 +19,7 @@ const IDENTIFIER_REGEX = /ENG-[0-9]+/g; // <-- must be a global regex (ends with
 const STATE_NAME = "Done";
 ```
 
-To call the webhook from your CI tool, `curl` the url for the webhook (you can find this in your Lightyear Dashboard) and append `?commitId=<commitId>` 
+To call the webhook from your CI tool, `curl` the url for the webhook (you can find this in your Lightyear Dashboard) and append the id of the commit that triggered the run using a query parameter `?commitId=<commitId>`. For example: 
 
 ```shell
 curl https://app.runlightyear.com/api/v1/endpoints/<slug>?commitId=<commitId>
