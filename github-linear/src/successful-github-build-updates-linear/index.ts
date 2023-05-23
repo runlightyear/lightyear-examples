@@ -1,12 +1,12 @@
 import { GitHub } from "@runlightyear/github";
 import { Linear } from "@runlightyear/linear";
+import { SKIPPED } from "@runlightyear/lightyear";
 import { deployWasSuccessful } from "./deployWasSuccessful";
 import { getNewlyDeployedCommits } from "./getNewlyDeployedCommits";
 import { getLinearIdentifiersFromCommits } from "./getLinearIdentifiersFromCommits";
 import { getAndCacheLinearStateId } from "./getAndCacheLinearStateId";
 import { updateLinearIssueState } from "./updateLinearIssueState";
 import { updateLastSuccessfulCommitId } from "./updateLastSuccessfulCommitId";
-import { SKIPPED } from "../../../../lightyear/packages/@runlightyear/lightyear";
 
 const OWNER = "<owner>";
 const REPO = "<repo>";
