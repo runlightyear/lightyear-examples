@@ -10,9 +10,9 @@
   "main": "build/index.js",
   "dependencies": {
     "@runlightyear/cli": "latest",
-    "@runlightyear/github": "^0.19.0",
+    "@runlightyear/github": "latest",
     "@runlightyear/lightyear": "latest",
-    "@runlightyear/linear": "^0.6.0",
+    "@runlightyear/linear": "latest",
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
