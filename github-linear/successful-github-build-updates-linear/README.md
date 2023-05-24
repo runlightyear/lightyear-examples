@@ -19,7 +19,9 @@ const STATE_NAME = "Done";
 
 Important note: the first time this integration is run, it will not detect any commits because it has no previous value for `lastSuccessfulCommitId`. After the first run, it will update the `lastSuccessfulCommitId` variable and subsequent calls should work as expected.
 
-To run, install the packages
+## To Run
+
+Install the packages
 
 ```shell
 npm install
