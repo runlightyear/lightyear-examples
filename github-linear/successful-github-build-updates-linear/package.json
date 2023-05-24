@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "lightyear dev",
-    "build": "esbuild ./index.js --entry-names=[dir]/index --bundle --minify --sourcemap --platform=node --target=node16.17 --outdir=build",
+    "build": "esbuild index.js --entry-names=[dir]/index --bundle --minify --sourcemap --platform=node --target=node16.17 --outdir=build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "lightyear deploy prod"
   },
