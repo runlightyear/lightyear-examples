@@ -10,7 +10,7 @@ An example commit message
 ENG-102 Fixed: Linear stories updated even if build fails
 ```
 
-To configure, make sure to update the following constants at the top of index.ts
+To configure, make sure to update the following constants at the top of `src/index.ts`
 
 ```typescript
 const OWNER = "<owner>";
