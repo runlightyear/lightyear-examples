@@ -1,4 +1,4 @@
-# Webhook Updates Linear
+# On Webhook Update Linear State
 
 This example creates a webhook that can be called with a `commitId` parameter. 
 

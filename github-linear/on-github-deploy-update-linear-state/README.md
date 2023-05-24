@@ -1,4 +1,4 @@
-# Successful GitHub Build Updates Linear
+# On GitHub Deploy Update Linear State
 
 This example listens for GitHub workflow runs and if it detects a successful one on the `main` branch, it will update the state of all of the Linear issues referenced in your commit messages.
 

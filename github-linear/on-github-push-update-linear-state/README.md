@@ -1,4 +1,4 @@
-# GitHub Push Updates Linear
+# On GitHub Push Update Linear State
 
 This example listens for GitHub pushes and will update the state of all of the Linear issues referenced in the commit messages.
 
