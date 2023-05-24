@@ -1,27 +1,20 @@
-# GitHub / Linear Examples
+# Successful GitHub Build Updates Linear
 
-Examples of how to connect GitHub and Linear using Lightyear.
+This example listens for GitHub workflow runs and if it detects a successful one on the `main` branch, it will update the state of all of the Linear issues referenced in your commit messages.
 
-## Development
+An example commit message
 
-In your terminal, install the packages
-
-```shell
-npm install
+```text
+ENG-102 Fixed: Linear stories updated even if build fails
 ```
 
-Get the Lightyear credentials
+To configure, make sure to update the following constants at the top of index.ts
 
-```shell
-npx lightyear login
+```typescript
+const OWNER = "<owner>";
+const REPO = "<repo>";
+const IDENTIFIER_REGEX = /ENG-[0-9]+/g; // <-- must be a global regex (ends with /g)
+const STATE_NAME = "Done";
 ```
 
-Choose which example(s) to try out and uncomment them in `./src/index.ts`. 
-
-Update any constants that refer to your GitHub and Linear instances in the example(s).
-
-Run the dev server
-
-```shell
-npm run dev
-```
+Important note: the first time this integration is run, it will not detect any commits because it has no previous value for `lastSuccessfulCommitId`. After the first run, it will update the `lastSuccessfulCommitId` variable and subsequent calls should work as expected.

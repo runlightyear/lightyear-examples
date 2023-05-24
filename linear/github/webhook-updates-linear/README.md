@@ -1,27 +1,28 @@
-# GitHub / Linear Examples
+# Webhook Updates Linear
 
-Examples of how to connect GitHub and Linear using Lightyear.
+This example creates a webhook that can be called with a `commitId` parameter. 
 
-## Development
+You can trigger this from any CI tool after a successful deploy to trigger updates to any of the Linear issues referenced in your commit messages. 
 
-In your terminal, install the packages
+An example commit message
 
-```shell
-npm install
+```text
+ENG-102 Fixed: Linear stories updated even if build fails
 ```
 
-Get the Lightyear credentials
+To configure, make sure to update the following constants at the top of index.ts
 
-```shell
-npx lightyear login
+```typescript
+const OWNER = "<owner>";
+const REPO = "<repo>";
+const IDENTIFIER_REGEX = /ENG-[0-9]+/g; // <-- must be a global regex (ends with /g)
+const STATE_NAME = "Done";
 ```
 
-Choose which example(s) to try out and uncomment them in `./src/index.ts`. 
-
-Update any constants that refer to your GitHub and Linear instances in the example(s).
-
-Run the dev server
+To call the webhook from your CI tool, `curl` the url for the webhook (you can find this in your Lightyear Dashboard) and append the id of the commit that triggered the run using a query parameter `?commitId=<commitId>`. For example: 
 
 ```shell
-npm run dev
+curl https://app.runlightyear.com/api/v1/endpoints/<slug>?commitId=<commitId>
 ```
+
+Important note: the first time this integration is run, it will not detect any commits because it has no previous value for `lastSuccessfulCommitId`. After the first run, it will update the `lastSuccessfulCommitId` variable and subsequent calls should work as expected.
