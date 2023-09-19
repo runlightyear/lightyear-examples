@@ -10,8 +10,7 @@
   "main": "build/index.js",
   "dependencies": {
     "@runlightyear/cli": "latest",
-    "@runlightyear/lightyear": "latest",
-    "tiny-invariant": "^1.2.0"
+    "@runlightyear/lightyear": "latest"
   },
   "devDependencies": {
     "esbuild": "^0.14.49",
