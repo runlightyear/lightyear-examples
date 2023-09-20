@@ -1,7 +1,5 @@
 # Lightyear GitHub Examples
 
-[Explanation]
-
 ## To Run
 
 Install the packages

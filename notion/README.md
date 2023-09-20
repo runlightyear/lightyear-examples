@@ -1,7 +1,5 @@
 # Lightyear Notion Examples
 
-[Explanation]
-
 ## To Run
 
 Install the packages

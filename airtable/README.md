@@ -1,7 +1,5 @@
 # Lightyear Airtable Examples
 
-[Explanation]
-
 ## To Run
 
 Install the packages

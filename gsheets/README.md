@@ -1,7 +1,5 @@
 # Lightyear Google Sheets Examples
 
-[Explanation]
-
 ## To Run
 
 Install the packages
