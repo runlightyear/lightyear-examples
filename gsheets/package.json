@@ -10,8 +10,8 @@
   "main": "build/index.js",
   "dependencies": {
     "@runlightyear/cli": "latest",
-    "@runlightyear/gsheets": "file:../../lightyear/packages/@runlightyear/gsheets",
-    "@runlightyear/lightyear": "file:../../lightyear/packages/@runlightyear/lightyear"
+    "@runlightyear/gsheets": "latest",
+    "@runlightyear/lightyear": "latest"
   },
   "devDependencies": {
     "esbuild": "^0.14.49",
