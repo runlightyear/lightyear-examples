@@ -1,4 +1,4 @@
-# Lightyear GitHub Examples
+# Lightyear Google Calendar Examples
 
 ## To Run
 

@@ -1,7 +1,5 @@
 # [The title]
 
-[Explanation]
-
 ## To Run
 
 Install the packages
