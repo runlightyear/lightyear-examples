@@ -1,6 +1,4 @@
-# [The title]
-
-[Explanation]
+# Lightyear Google Calendar Examples
 
 ## To Run
 
