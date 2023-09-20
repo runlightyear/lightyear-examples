@@ -4,3 +4,4 @@ import "./deleteRecord";
 import "./getRecord";
 import "./listRecords";
 import "./updateRecord";
+import "./whoami";

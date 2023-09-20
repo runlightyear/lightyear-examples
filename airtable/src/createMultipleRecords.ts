@@ -1,18 +1,19 @@
 import { defineAction } from "@runlightyear/lightyear";
 import { Airtable } from "@runlightyear/airtable";
-import { BASE_ID, TABLE_ID_OR_NAME } from "./constants";
 
 defineAction({
   name: "createMultipleRecords",
   title: "Create Multiple Records",
   apps: ["airtable"],
-  run: async ({ auths }) => {
+  variables: ["baseId", "tableIdOrName"],
+  run: async ({ auths, variables }) => {
     const airtable = new Airtable({
       auth: auths.airtable,
     });
-    const result = await airtable.createRecords({
-      baseId: BASE_ID,
-      tableIdOrName: TABLE_ID_OR_NAME,
+
+    const response = await airtable.createRecords({
+      baseId: variables.baseId!,
+      tableIdOrName: variables.tableIdOrName!,
       records: [
         {
           fields: {
@@ -27,11 +28,6 @@ defineAction({
       ],
     });
 
-    if ("records" in result.data) {
-      console.log(
-        "Created records",
-        result.data.records.map((record) => record.id)
-      );
-    }
+    console.log("Response: ", response.data);
   },
 });
