@@ -2,6 +2,9 @@ import "./compareTwoCommits";
 
 import "./gists/createGist";
 
+import "./gitDatabase/getTree";
+import "./gitDatabase/downloadFile";
+
 import "./issues/assignIssue";
 import "./issues/completeIssue";
 import "./issues/createIssue";
