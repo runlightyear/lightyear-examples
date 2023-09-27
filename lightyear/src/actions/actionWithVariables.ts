@@ -7,7 +7,7 @@ defineAction({
     "var1",
     "var2?",
     { name: "var3", description: "Required variable 3" },
-    { name: "var4?", description: "Optional variable 4?" },
+    { name: "var4?", description: "Optional variable 4" },
   ],
   run: async ({ variables }) => {
     console.log("required variable", variables.var1);

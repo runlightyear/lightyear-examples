@@ -12,7 +12,7 @@ defineAction({
     },
     {
       name: "secret4?",
-      description: "Optional secret 4?",
+      description: "Optional secret 4",
     },
   ],
   run: async ({ secrets }) => {
