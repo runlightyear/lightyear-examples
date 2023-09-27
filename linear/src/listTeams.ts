@@ -12,6 +12,6 @@ defineAction({
 
     const response = await linear.listTeams();
 
-    console.log("Response: ", JSON.stringify(response.data, null, 2));
+    console.log("Response: ", response.data);
   },
 });

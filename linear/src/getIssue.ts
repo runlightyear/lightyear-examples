@@ -15,6 +15,6 @@ defineAction({
       id: variables.issueId!,
     });
 
-    console.log("Response: ", response);
+    console.log("Response: ", response.data);
   },
 });
