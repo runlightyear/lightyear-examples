@@ -1,6 +1,6 @@
-# [The title]
+# Lightyear React Examples
 
-## To Run Lightyear
+## To run Lightyear
 
 Install the packages
 
@@ -20,7 +20,7 @@ When ready, run the Lightyear dev server
 npm run dev
 ```
 
-## To Run the React App
+## To run the React App
 
 ```shell
 cd react-app
