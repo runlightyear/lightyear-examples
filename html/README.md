@@ -19,3 +19,5 @@ When ready, run the dev server
 ```shell
 npm run dev
 ```
+
+Make sure to fill in the action attribute in each form with the appropriate webhook endpoint URL.
