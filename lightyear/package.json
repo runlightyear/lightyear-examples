@@ -10,7 +10,7 @@
   "main": "build/index.js",
   "dependencies": {
     "@runlightyear/cli": "latest",
-    "@runlightyear/lightyear": "file:../../lightyear/packages/@runlightyear/lightyear"
+    "@runlightyear/lightyear": "latest"
   },
   "devDependencies": {
     "esbuild": "^0.14.49",
