@@ -1,0 +1,12 @@
+label {
+  display: block;
+  padding-bottom: 3px;
+}
+
+.form-field {
+  margin: 10px 0;
+}
+
+input {
+  width: 300px;
+}

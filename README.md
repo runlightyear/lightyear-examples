@@ -15,8 +15,6 @@ Then get your Lightyear credentials
 npx lightyear login
 ```
 
-Most of the examples will have instance-specific constants that you will need to set before running.
-
 When ready, run the dev server
 
 ```shell
