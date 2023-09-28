@@ -1,5 +1,5 @@
-import { defineAction } from "../../../lightyear/packages/@runlightyear/lightyear";
-import { Linear } from "../../../lightyear/packages/@runlightyear/linear";
+import { defineAction } from "@runlightyear/lightyear";
+import { Linear } from "@runlightyear/linear";
 
 defineAction({
   name: "listUsers",
