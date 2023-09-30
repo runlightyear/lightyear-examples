@@ -1,9 +1,8 @@
-import { Airtable } from "../../../lightyear/packages/@runlightyear/airtable";
+import { Airtable } from "@runlightyear/airtable";
 
 Airtable.onNewOrUpdatedRecords({
   name: "onNewOrUpdatedRecords",
   title: "On New or Updated Records",
-  baseId: "app7ZYewKy9OJeE2l",
   run: async ({ data, auths }) => {
     console.log("New or updated records: ", data.newOrUpdatedRecords);
 
@@ -11,7 +10,7 @@ Airtable.onNewOrUpdatedRecords({
 
     for (const newOrUpdatedRecord of data.newOrUpdatedRecords) {
       const response = await airtable.getRecord({
-        baseId: "app7ZYewKy9OJeE2l",
+        baseId: data.baseId,
         tableIdOrName: newOrUpdatedRecord.tableId,
         recordId: newOrUpdatedRecord.recordId,
       });
