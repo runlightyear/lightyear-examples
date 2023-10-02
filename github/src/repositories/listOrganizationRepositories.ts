@@ -5,7 +5,12 @@ defineAction({
   name: "listOrganizationRepositories",
   title: "List Organization Repositories",
   apps: ["github"],
-  variables: ["org"],
+  variables: [
+    {
+      name: "org",
+      description: "The organization name. The name is not case sensitive.",
+    },
+  ],
   run: async ({ auths, variables }) => {
     const github = new GitHub({
       auth: auths.github,
@@ -13,6 +18,6 @@ defineAction({
     const response = await github.listOrganizationRepositories({
       org: variables.org!,
     });
-    console.log("Response: ", response.data);
+    console.log("Response data: ", response.data);
   },
 });

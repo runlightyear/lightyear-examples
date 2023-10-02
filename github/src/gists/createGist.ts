@@ -18,6 +18,6 @@ defineAction({
       },
       isPublic: false,
     });
-    console.log("Response: ", response.data);
+    console.log("Response data:", response.data);
   },
 });

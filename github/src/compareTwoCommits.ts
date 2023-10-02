@@ -31,6 +31,6 @@ defineAction({
       repo: variables.repo!,
       basehead: variables.basehead!,
     });
-    console.log("Response: ", response.data);
+    console.log("Response data:", response.data);
   },
 });
