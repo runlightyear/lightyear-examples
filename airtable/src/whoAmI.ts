@@ -2,7 +2,7 @@ import { defineAction } from "@runlightyear/lightyear";
 import { Airtable } from "@runlightyear/airtable";
 
 defineAction({
-  name: "whoami",
+  name: "whoAmI",
   title: "Who Am I?",
   apps: ["airtable"],
   run: async ({ auths, variables }) => {
