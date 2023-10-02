@@ -5,7 +5,19 @@ defineAction({
   name: "createIssue",
   title: "Create Issue",
   apps: ["github"],
-  variables: ["owner", "repo", "title"],
+  variables: [
+    {
+      name: "owner",
+      description:
+        "The account owner of the repository. The name is not case sensitive.",
+    },
+    {
+      name: "repo",
+      description:
+        "The name of the repository without the .git extension. The name is not case sensitive.",
+    },
+    "title",
+  ],
   run: async ({ auths, variables }) => {
     const github = new GitHub({
       auth: auths.github,
@@ -15,6 +27,6 @@ defineAction({
       repo: variables.repo!,
       title: variables.title!,
     });
-    console.log("Response: ", response.data);
+    console.log("Response data: ", response.data);
   },
 });

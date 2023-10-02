@@ -5,7 +5,19 @@ defineAction({
   name: "closePullRequest",
   title: "Close Pull Request",
   apps: ["github"],
-  variables: ["owner", "repo", "pull_number"],
+  variables: [
+    {
+      name: "owner",
+      description:
+        "The account owner of the repository. The name is not case sensitive.",
+    },
+    {
+      name: "repo",
+      description:
+        "The name of the repository without the .git extension. The name is not case sensitive.",
+    },
+    "pullNumber",
+  ],
   run: async ({ auths, variables }) => {
     const github = new GitHub({
       auth: auths.github,
@@ -13,7 +25,7 @@ defineAction({
     const response = await github.updatePullRequest({
       owner: variables.owner!,
       repo: variables.repo!,
-      pullNumber: parseInt(variables.pull_number!),
+      pullNumber: parseInt(variables.pullNumber!),
       state: "closed",
     });
     console.log("Closed pull request: ", response.data);

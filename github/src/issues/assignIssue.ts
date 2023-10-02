@@ -5,7 +5,20 @@ defineAction({
   name: "assignIssue",
   title: "Assign Issue",
   apps: ["github"],
-  variables: ["owner", "repo", "issue_number", "assignee"],
+  variables: [
+    {
+      name: "owner",
+      description:
+        "The account owner of the repository. The name is not case sensitive.",
+    },
+    {
+      name: "repo",
+      description:
+        "The name of the repository without the .git extension. The name is not case sensitive.",
+    },
+    "issueNumber",
+    "assignee",
+  ],
   run: async ({ auths, variables }) => {
     const github = new GitHub({
       auth: auths.github,
@@ -13,9 +26,9 @@ defineAction({
     const result = await github.updateIssue({
       owner: variables.owner!,
       repo: variables.repo!,
-      issueNumber: parseInt(variables.issue_number!),
+      issueNumber: parseInt(variables.issueNumber!),
       assignees: [variables.assignee!],
     });
-    console.log("Issue: ", result.data);
+    console.log("Issue data: ", result.data);
   },
 });
