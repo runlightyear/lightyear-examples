@@ -5,13 +5,25 @@ defineAction({
   name: "downloadFile",
   title: "Download File",
   apps: ["github"],
-  variables: ["owner", "repo", "url"],
+  variables: [
+    {
+      name: "owner",
+      description:
+        "The account owner of the repository. The name is not case sensitive.",
+    },
+    {
+      name: "repo",
+      description:
+        "The name of the repository without the .git extension. The name is not case sensitive.",
+    },
+    "url",
+  ],
   run: async ({ auths, variables }) => {
     const github = new GitHub({ auth: auths.github });
 
     const response = await github.get({ url: variables.url! });
 
-    console.log("Response: ", response.data);
+    console.log("Response data: ", response.data);
 
     const content = response.data.content;
     const encoding = response.data.encoding;
