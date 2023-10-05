@@ -14,3 +14,8 @@ import "./whoAmI";
 // import "./onNewRecordTest";
 import "./onNewRecords";
 import "./onNewOrUpdatedRecords";
+
+import "./listWebhooks";
+import "./deleteWebhook";
+import "./deleteAllWebhooks";
+import "./refreshWebhook";
