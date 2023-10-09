@@ -8,3 +8,7 @@ import "./listUpcomingEvents";
 import "./patchEventAttendees";
 import "./patchEventSummary";
 import "./updateEvent";
+
+import "./onNewEvents";
+import "./onNewMatchingEvents";
+import "./onNewAndUpdatedEvents";
