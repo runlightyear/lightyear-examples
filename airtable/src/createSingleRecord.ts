@@ -1,25 +1,24 @@
 import { defineAction } from "@runlightyear/lightyear";
 import { Airtable } from "@runlightyear/airtable";
-import { BASE_ID, TABLE_ID_OR_NAME } from "./constants";
 
 defineAction({
   name: "createSingleRecord",
   title: "Create Single Record",
   apps: ["airtable"],
-  run: async ({ auths }) => {
+  variables: ["baseId", "tableIdOrName", "name"],
+  run: async ({ auths, variables }) => {
     const airtable = new Airtable({
       auth: auths.airtable,
     });
-    const result = await airtable.createRecords({
-      baseId: BASE_ID,
-      tableIdOrName: TABLE_ID_OR_NAME,
+
+    const response = await airtable.createRecords({
+      baseId: variables.baseId!,
+      tableIdOrName: variables.tableIdOrName!,
       fields: {
-        Name: "North Beach",
+        Name: variables.name!,
       },
     });
 
-    if ("id" in result.data) {
-      console.log("Created record", result.data.id);
-    }
+    console.log("Record: ", response.data);
   },
 });
