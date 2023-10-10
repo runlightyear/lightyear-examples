@@ -10,8 +10,8 @@
   "main": "build/index.js",
   "dependencies": {
     "@runlightyear/cli": "latest",
-    "@runlightyear/lightyear": "latest",
-    "@runlightyear/slack": "latest"
+    "@runlightyear/lightyear": "file:../../lightyear/packages/@runlightyear/lightyear",
+    "@runlightyear/slack": "file:../../lightyear/packages/@runlightyear/slack"
   },
   "devDependencies": {
     "esbuild": "^0.14.49",

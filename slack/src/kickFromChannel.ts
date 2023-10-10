@@ -2,27 +2,26 @@ import { defineAction } from "@runlightyear/lightyear";
 import { Slack } from "@runlightyear/slack";
 
 defineAction({
-  name: "postMessage",
-  title: "Post Message",
+  name: "kickFromChannel",
+  title: "Kick From Channel",
   apps: ["slack"],
   variables: [
     {
       name: "channel",
-      description:
-        "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name.",
+      description: "ID of conversation to kick user from. Example: C1234567890",
     },
     {
-      name: "text",
-      description: "The formatted text of the message to be published.",
+      name: "user",
+      description: "User ID to be removed. Example: W1234567890",
     },
   ],
   run: async ({ auths, variables }) => {
     const slack = new Slack({
       auth: auths.slack,
     });
-    const response = await slack.postMessage({
+    const response = await slack.kickFromConversation({
       channel: variables.channel!,
-      text: variables.text!,
+      user: variables.user!,
     });
     console.log("Response data: ", response.data);
   },

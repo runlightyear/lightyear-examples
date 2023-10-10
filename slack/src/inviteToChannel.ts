@@ -2,27 +2,26 @@ import { defineAction } from "@runlightyear/lightyear";
 import { Slack } from "@runlightyear/slack";
 
 defineAction({
-  name: "postMessage",
-  title: "Post Message",
+  name: "inviteToChannel",
+  title: "Invite to Channel",
   apps: ["slack"],
   variables: [
     {
       name: "channel",
-      description:
-        "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name.",
+      description: "ID of the channel to invite user to. Example: C1234567890",
     },
     {
-      name: "text",
-      description: "The formatted text of the message to be published.",
+      name: "user",
+      description: "ID of the user to invite. Example: U3456789012",
     },
   ],
   run: async ({ auths, variables }) => {
     const slack = new Slack({
       auth: auths.slack,
     });
-    const response = await slack.postMessage({
+    const response = await slack.inviteToConversation({
       channel: variables.channel!,
-      text: variables.text!,
+      users: [variables.user!],
     });
     console.log("Response data: ", response.data);
   },

@@ -1,9 +1,9 @@
-import { defineAction } from "@runlightyear/lightyear";
+import { dayjsUtc, defineAction } from "@runlightyear/lightyear";
 import { Slack } from "@runlightyear/slack";
 
 defineAction({
-  name: "postMessage",
-  title: "Post Message",
+  name: "scheduleMessage",
+  title: "Schedule Message",
   apps: ["slack"],
   variables: [
     {
@@ -12,18 +12,23 @@ defineAction({
         "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name.",
     },
     {
-      name: "text",
-      description: "The formatted text of the message to be published.",
+      name: "delay?",
+      description:
+        "Amount of time in seconds to delay sending message. Defaults to 60.",
     },
   ],
   run: async ({ auths, variables }) => {
     const slack = new Slack({
       auth: auths.slack,
     });
-    const response = await slack.postMessage({
+
+    const delay = variables.delay ? parseInt(variables.delay) : 60;
+    const response = await slack.scheduleMessage({
       channel: variables.channel!,
-      text: variables.text!,
+      postAt: dayjsUtc().add(delay, "seconds").unix(),
+      text: `This message was delayed ${delay} seconds.`,
     });
+
     console.log("Response data: ", response.data);
   },
 });
