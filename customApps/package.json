@@ -9,10 +9,9 @@
   },
   "main": "build/index.js",
   "dependencies": {
-    "@runlightyear/cli": "^0.33.0",
-    "@runlightyear/lightyear": "^0.38.1",
-    "@runlightyear/openai": "^0.8.0",
-    "tiny-invariant": "^1.2.0"
+    "@runlightyear/cli": "latest",
+    "@runlightyear/github": "file:../../lightyear/packages/@runlightyear/github",
+    "@runlightyear/lightyear": "file:../../lightyear/packages/@runlightyear/lightyear"
   },
   "devDependencies": {
     "esbuild": "^0.14.49",
