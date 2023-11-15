@@ -1,5 +1,5 @@
 import { defineAction, sleep } from "@runlightyear/lightyear";
-import { OpenAI } from "../../../../lightyear/packages/@runlightyear/openai";
+import { OpenAI } from "@runlightyear/openai";
 
 defineAction({
   name: "createRunAndRetrieveRun",
